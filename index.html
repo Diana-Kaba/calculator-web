@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Калькулятор вартості дня народження</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.rtl.min.css"
+    integrity="sha512-VNBisELNHh6+nfDjsFXDA6WgXEZm8cfTEcMtfOZdx0XTRoRbr/6Eqb2BjqxF4sNFzdvGIt+WqxKgn0DSfh2kcA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    input:valid:not([type="radio"]) {
+      border: 2px solid green;
+    }
+
+    input:invalid:not([type="radio"]) {
+      border: 2px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <h1 class="text-center">Калькулятор вартості дня народження</h1>
+  </div>
+
+  <div class="container mt-4 p-4 bg-secondary text-white rounded">
+    <form action="#" name="calculator" method="get" class="w-50">
+      <!-- COUNT -->
+      <div class="mb-3 mt-3">
+        <label for="count" class="form-label lead">Кількість дітей:</label>
+        <input type="number" class="form-control" id="count" name="count" placeholder="Введіть кількість" min="1"
+          max="20" required />
+      </div>
+      <!-- /COUNT -->
+
+      <!-- DURATION -->
+      <div class="mb-3 mt-3">
+        <label for="duration" class="form-label lead">Тривалість свята:</label>
+        <input type="number" class="form-control" id="duration" name="duration" placeholder="Введіть тривалість" min="1"
+          max="6" required />
+      </div>
+      <!-- /DURATION -->
+
+      <!-- TYPE -->
+      <fieldset>
+        <legend class="form-label lead">Оберіть тип послуги:</legend>
+
+        <div class="mb-3 mt-3 d-flex align-items-center gap-2">
+          <label for="cinema" class="form-check-label lead">Кінотеарт</label>
+          <input type="radio" class="form-check-input" id="cinema" name="type" value="cinema" checked />
+        </div>
+
+        <div class="mb-3 mt-3 d-flex align-items-center gap-2">
+          <label for="quest" class="form-check-label lead">Квест</label>
+          <input type="radio" class="form-check-input" id="quest" name="type" value="quest" />
+        </div>
+
+        <div class="mb-3 mt-3 d-flex align-items-center gap-2">
+          <label for="animators" class="form-check-label lead">Аніматори</label>
+          <input type="radio" class="form-check-input" id="animators" name="type" value="animators" />
+        </div>
+
+        <div class="mb-3 mt-3 d-flex align-items-center gap-2">
+          <label for="bubble-show" class="form-check-label lead">Шоу мильних бульбашок</label>
+          <input type="radio" class="form-check-input" id="bubble-show" name="type" value="bubble-show" />
+        </div>
+      </fieldset>
+      <!-- /TYPE -->
+
+      <!-- OWN TYPE -->
+      <div class="mb-3 mt-3">
+        <label for="own-type" class="form-label lead">Введіть свій варіант (необов'язково):</label>
+        <input type="text" class="form-control" id="own-type" name="own-type" placeholder="Введіть варіант"
+          pattern="[а-яА-ЯЇїІіЄєҐґщЩ\s\-]+" />
+      </div>
+      <!-- /OWN TYPE -->
+
+      <!-- ADDITIONAL -->
+      <div class="mb-3 mt-3">
+        <label for="additional" class="form-label lead">Додаткові послуги:</label>
+        <select class="form-select" id="additional" name="additional">
+          <option value="0" selected>Оберіть додаткові послуги</option>
+          <option value="500">Торт</option>
+          <option value="250">Повітряні кулі</option>
+          <option value="1000">Подарунки</option>
+        </select>
+      </div>
+      <!-- /ADDITIONAL -->
+
+      <!-- SUBMIT -->
+      <div class="mb-3 mt-4">
+        <button type="submit" id="submit" class="btn btn-lg btn-light">
+          Розрахувати
+        </button>
+      </div>
+      <!-- /SUBMIT -->
+    </form>
+  </div>
+
+  <div class="container mt-3">
+    <div class="alert alert-secondary w-50">
+      До сплати: <span id="result">0</span> грн
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
